@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="bodyRight">
-      <h1>Welcome to Here</h1>
+      <h1>Test</h1>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'BodyRight'
-}
+  export default {
+    name: 'Content'
+  }
 </script>
 
 <style scoped>

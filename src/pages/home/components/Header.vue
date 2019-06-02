@@ -3,8 +3,8 @@
     <div class="col-md-2 h-logo">进销存管理系统</div>
     <div class="h-nav">
         <ul class="nav navbar-nav">
-          <li v-for="items of list" :key="items.id" @click="Click(items.id)">
-            <a href="javascript:void(0);" class="a">{{items.text}}</a>
+          <li v-for="items of list"  :key="items.id" @click="Click(items.id)">
+            <a href="javascript:void(0);" :class="SelectId === items.id ? 'b' : 'a'">{{items.text}}</a>
           </li>
         </ul>
     </div>
@@ -17,51 +17,43 @@ export default{
   name: 'HomeHeader',
   data: function () {
     return {
+      SelectId: 0,
       list: [
         { id: 0,
           name: 'index',
-          text: '首页',
-          href: '#'
+          text: '首页'
         },
         {id: 1,
           name: 'sys',
-          text: '系统管理',
-          href: '#'
+          text: '系统管理'
         },
         { id: 2,
           name: 'cam',
-          text: '企业管理',
-          href: '#'
+          text: '企业管理'
         },
         { id: 3,
           name: 'res',
-          text: '资源管理',
-          href: '#'
+          text: '资源管理'
         },
         { id: 4,
           name: 'buy',
-          text: '采购管理',
-          href: '#'
+          text: '采购管理'
         },
         { id: 5,
           name: 'ware',
-          text: '仓库管理',
-          href: '#'
+          text: '仓库管理'
         },
         { id: 6,
           name: 'sell',
-          text: '销售管理',
-          href: '#'
+          text: '销售管理'
         },
         { id: 7,
           name: 'finan',
-          text: '财务管理',
-          href: '#'
+          text: '财务管理'
         },
         { id: 8,
           name: 'form',
-          text: '报表中心',
-          href: '#'
+          text: '报表中心'
         }
       ]
     }
@@ -69,6 +61,7 @@ export default{
   methods: {
     Click: function (id) {
       this.bus.$emit('sendName', id)
+      this.SelectId = id
       // alert(this.items.id)
       // alert(id)
     }
@@ -105,4 +98,9 @@ export default{
   .a{
     color: #adadad;
   }
+  .b{
+    background-color: #EEEEEE;
+    color:#BCBCBC;
+  }
+
 </style>

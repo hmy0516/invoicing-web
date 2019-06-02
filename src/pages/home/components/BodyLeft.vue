@@ -1,27 +1,20 @@
 <template>
   <div class="bodyLeft">
     <ul class="nav nav-stacked" v-once v-if="staticId == 0">
-      <li v-for="item of index" :key="item.id">
-        <a class="a">{{item.text}}</a>
+      <li v-for="item of index" :key="item.id" @click="SelectOn(item.id)">
+        <router-link to="/Msg" class="a">{{item.text}}</router-link>
       </li>
     </ul>
     <ul class="nav nav-stacked" v-once v-else-if="staticId == 1">
-      <li v-for="item of sys" :key="item.id">
-        <a class="a">{{item.text}}</a>
+      <li v-for="item of sys" :key="item.id" @click="SelectOn(item.id)">
+        <router-link to="/Msg" class="a">{{item.text}}</router-link>
       </li>
     </ul>
-    <ul class="nav nav-stacked" v-once v-else key="list3">
-      <li v-for="item of cam" :key="item.id">
-        <a class="a">{{item.text}}</a>
+    <ul class="nav nav-stacked" v-once v-else>
+      <li v-for="item of cam" :key="item.id" @click="SelectOn(item.id)">
+        <router-link to="/Msg" class="a">{{item.text}}</router-link>
       </li>
     </ul>
-<!--    <div>{{staticId}}</div>-->
-<!--      <li v-else-if="staticId===1" v-for="item of sys" :key="item.id">-->
-<!--        <a class="a">{{item.text}}</a>-->
-<!--      </li>-->
-<!--      <li v-else v-for="item of cam" :key="item.id">-->
-<!--        <a class="a">{{item.text}}</a>-->
-<!--      </li>-->
   </div>
 </template>
 
@@ -31,6 +24,7 @@ export default {
   data: function () {
     return {
       staticId: 0,
+      chooseId: 0,
       index: [{
         id: 0,
         text: '首页'}],
@@ -76,11 +70,15 @@ export default {
   //   })
   // },
   created: function () {
-    this.bbtn()
+    this.SecondNav()
   },
   methods: {
-    bbtn: function () {
+    SecondNav: function () {
       this.bus.$on('sendName', (id) => { this.staticId = id })
+    },
+    SelectOn:function(id){
+      this.$set(this.chooseId,id)
+      // alert(this.chooseId)
     }
   }
 }
@@ -97,12 +95,23 @@ export default {
   }
   .a{
     padding-top: 17px;
-    color: #adadad;
     display: block;
+    color:#A3A3A3;
     height:50px;
   }
   .a:hover{
     background-color: #708090;
     color: #fff;
+  }
+  .nav> li >a:focus,.b{
+    text-decoration: none;
+    background-color: #009688;
+    color:#AADCD7;
+    padding-top: 17px;
+    display: block;
+    height:50px;
+  }
+  .b:hover{
+    background-color: #009688;
   }
 </style>
