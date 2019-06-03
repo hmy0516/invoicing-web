@@ -4,7 +4,7 @@
     <div class="h-nav">
         <ul class="nav navbar-nav">
           <li v-for="items of list"  :key="items.id" @click="Click(items.id)">
-            <a href="javascript:void(0);" :class="SelectId === items.id ? 'b' : 'a'">{{items.text}}</a>
+            <a href="javascript:void(0);" :class="sid === items.id ? 'b' : 'a'">{{items.text}}</a>
           </li>
         </ul>
     </div>
@@ -15,9 +15,9 @@
 <script>
 export default{
   name: 'HomeHeader',
+  props:["sid"],
   data: function () {
     return {
-      SelectId: 0,
       list: [
         { id: 0,
           name: 'index',
@@ -58,10 +58,13 @@ export default{
       ]
     }
   },
+  // created: function () {
+  //   this.GetStaticId()
+  // },
   methods: {
     Click: function (id) {
-      this.bus.$emit('sendName', id)
-      this.SelectId = id
+      this.bus.$emit('sendSelectId', id)
+      this.sid = id
       // alert(this.items.id)
       // alert(id)
     }

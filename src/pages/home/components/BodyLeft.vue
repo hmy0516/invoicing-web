@@ -1,18 +1,18 @@
 <template>
   <div class="bodyLeft">
-    <ul class="nav nav-stacked" v-once v-if="staticId == 0">
-      <li v-for="item of index" :key="item.id" @click="SelectOn(item.id)">
-        <router-link to="/Msg" class="a">{{item.text}}</router-link>
+    <ul class="nav nav-stacked" v-once v-if="staticId == 1">
+      <li v-for="item of sys" :key="item.id">
+        <router-link :to="{path:item.href,query:{sid:staticId}}" class="a">{{item.text}}</router-link>
       </li>
     </ul>
-    <ul class="nav nav-stacked" v-once v-else-if="staticId == 1">
-      <li v-for="item of sys" :key="item.id" @click="SelectOn(item.id)">
-        <router-link to="/Msg" class="a">{{item.text}}</router-link>
+    <ul class="nav nav-stacked" v-once v-else-if="staticId == 2">
+      <li v-for="item of cam" :key="item.id">
+        <router-link :to="{path:item.href,query:{sid:staticId}}" class="a">{{item.text}}</router-link>
       </li>
     </ul>
     <ul class="nav nav-stacked" v-once v-else>
-      <li v-for="item of cam" :key="item.id" @click="SelectOn(item.id)">
-        <router-link to="/Msg" class="a">{{item.text}}</router-link>
+      <li v-for="item of index" :key="item.id">
+        <router-link :to="{path:item.href,query:{sid:staticId}}" class="a">{{item.text}}</router-link>
       </li>
     </ul>
   </div>
@@ -21,36 +21,46 @@
 <script>
 export default {
   name: 'BodyLeft',
+  props:["sid"],
   data: function () {
     return {
-      staticId: 0,
+      staticId: this.sid,
       chooseId: 0,
       index: [{
         id: 0,
-        text: '首页'}],
+        text: '首页',
+        href: '/#'
+      }],
       sys: [
         {
           id: 11,
-          text: '角色权限设置'
+          text: '角色权限设置',
+          href: '/Msg'
         }, {
           id: 12,
-          text: '操作员设置'
+          text: '操作员设置',
+          href: '/Msg'
         }, {
           id: 13,
-          text: '系统日志'
+          text: '系统日志',
+          href: '/Msg'
         }],
       cam: [
         { id: 21,
-          text: '企业信息设置'
+          text: '企业信息设置',
+          href: '/Msg'
         },
         { id: 22,
-          text: '部门管理'
+          text: '部门管理',
+          href: '/Part'
         },
         { id: 23,
-          text: '职务设置'
+          text: '职务设置',
+          href: '/Msg'
         },
         { id: 24,
-          text: '员工管理'
+          text: '员工管理',
+          href: '/Msg'
         }]
       // res: ['商品库管理', '供应商管理', '客户商管理'],
       // buy: ['采购单管理'],
@@ -61,24 +71,12 @@ export default {
       // show: true,
     }
   },
-  // mounted: function () {
-  //   this.bus.$on('sendName', function (id) {
-  //     var this_ = this
-  //     this_.staticId = id
-  //     alert(this_.staticId)
-  //     // this.$forceUpdate()
-  //   })
-  // },
   created: function () {
     this.SecondNav()
   },
   methods: {
     SecondNav: function () {
-      this.bus.$on('sendName', (id) => { this.staticId = id })
-    },
-    SelectOn:function(id){
-      this.$set(this.chooseId,id)
-      // alert(this.chooseId)
+      this.bus.$on('sendSelectId', (id) => { this.staticId = id })
     }
   }
 }
@@ -86,8 +84,11 @@ export default {
 
 <style scoped>
   .bodyLeft{
+    z-index: 9999;
+    position: relative;
     font-size: 14px;
     /*padding-left: 20px;*/
+    float:left;
     width: 200px;
     height:549px;
     background-color: #393D49;

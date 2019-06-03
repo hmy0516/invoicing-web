@@ -10,11 +10,11 @@
 <script>
   import HomeHeader from '@/pages/home/components/Header'
   import BodyLeft from '@/pages/home/components/BodyLeft'
-  import Content from './msgComponents/content'
+  import Content from './partComponents/content'
   import HomeBottom from '@/pages/home/components/Bottom'
 
   export default {
-    name:'MsgManage',
+    name:'PartManage',
     components: {
       HomeHeader: HomeHeader,
       BodyLeft: BodyLeft,
