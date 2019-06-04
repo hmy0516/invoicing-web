@@ -9,11 +9,11 @@
             <input type="text" class="form-control col-md-2" id="search" placeholder="">
           </div>
           <div class="col-md-2">
-            <button type="submit" class="btn btn-default">查询</button>
+            <button type="submit" class="btn btn-default"><i class="iconfont  iconchaxun1">查询</i></button>
           </div>
         </div>
         <Button></Button>
-        <Table></Table>
+        <Table :list="list"></Table>
       </fieldset>
     </form>
   </div>
@@ -25,6 +25,9 @@
 
   export default {
     name: 'Content',
+    props:{
+      list:Array
+    },
     components:{
       Button:Button,
       Table:Table
@@ -63,5 +66,19 @@
     padding: 5px 0px 20px 100px;
     border-bottom: #E6E6E6 solid 1px;
     width:970px;
+  }
+  .btn{
+    background-color: #009688;
+    border: #009688 solid 1px;
+    color: #ffffff;
+    height: 33px;
+  }
+  .btn-default:hover{
+    background-color: #2FA89D;
+    border: #2FA89D solid 1px;
+    color:#ffffff;
+  }
+  i{
+    font-size: 14px;
   }
 </style>
