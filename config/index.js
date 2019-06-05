@@ -12,9 +12,9 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api':{
-        target:'http://localhost:8080',
+        target:'http://http://192.168.227.1:8080',
         pathRewrite:{
-          '^/api':'/static/mock'
+          '^/api':''
         }
       }
     },
@@ -27,7 +27,7 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */

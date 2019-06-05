@@ -25,9 +25,7 @@
 
   export default {
     name: 'Content',
-    props:{
-      list:Array
-    },
+    props:["list"],
     components:{
       Button:Button,
       Table:Table

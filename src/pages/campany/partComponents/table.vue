@@ -10,10 +10,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="items of list" :key="items.id">
-          <td>{{items.id}}</td>
-          <td>{{items.name}}</td>
-          <td>{{items.describe}}</td>
+        <tr v-for="items of list" :key="items.cId">
+          <td>{{items.cId}}</td>
+          <td>{{items.cDuty}}</td>
+          <td>{{items.cComment}}</td>
           <td class="td"><tb-button></tb-button></td>
         </tr>
 <!--        <tr>-->
@@ -37,9 +37,7 @@
   import TbButton from "./tablebutton"
   export default {
     name:'Table',
-    props:{
-      list:Array
-    },
+    props:["list"],
     components:{
       TbButton:TbButton
     }
