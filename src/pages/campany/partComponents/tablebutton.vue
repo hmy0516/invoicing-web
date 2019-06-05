@@ -8,6 +8,12 @@
 <script>
   export default {
     name:'TbButton',
+    props:["id"],
+    data:function(){
+      return{
+        cid:this.id
+      }
+    },
     methods:{
       Delete:function(){
         alert("确定删除该部门？")

@@ -32,15 +32,16 @@
     },
     methods:{
       getPartInfo:function(){
-        axios.get('/api/partInfo.json')
+        axios.get('/api/department')
           .then(this.getPartInfoSucc)
       },
       getPartInfoSucc:function(res){
-        const data = res
-        this.partList = data
-        console.log(this.partList)
+        res = res.data;
+        console.log("sss"+res.data.list)
+        this.partList = res.data.list
       }
-    },
+    }
+    ,
     mounted(){
       this.getPartInfo()
     }
