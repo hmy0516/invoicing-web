@@ -36,10 +36,9 @@
           .then(this.getPartInfoSucc)
       },
       getPartInfoSucc:function(res){
-        res = res.data
-        if(res.ret && res.data){}
-        const data = res.data
-        this.partList = data.partList
+        const data = res
+        this.partList = data
+        console.log(this.partList)
       }
     },
     mounted(){

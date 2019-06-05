@@ -11,13 +11,13 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api':{
-        target:'http://localhost:8080',
-        pathRewrite:{
-          '^/api':'/static/mock'
+      '/api': {
+        target: 'http://192.168.227.1:8080',
+        pathRewrite: {
+          '^/api': ''
         }
       }
-    },
+      },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
