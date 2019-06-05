@@ -32,13 +32,13 @@
     },
     methods:{
       getPartInfo:function(){
-        axios.get('/api/showAll/2/2')
+        axios.get('/api/department')
           .then(this.getPartInfoSucc)
       },
       getPartInfoSucc:function(res){
         res = res.data;
-        console.log(res)
-        this.partList = res
+        console.log("sss"+res.data.list)
+        this.partList = res.data.list
       }
     }
     ,

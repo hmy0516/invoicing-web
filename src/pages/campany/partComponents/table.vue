@@ -11,8 +11,8 @@
       </thead>
       <tbody>
         <tr v-for="items of list" :key="items.cId">
-          <td>{{items.cId}}</td>
-          <td>{{items.cDuty}}</td>
+          <td>{{items.cDid}}</td>
+          <td>{{items.cDepartment}}</td>
           <td>{{items.cComment}}</td>
           <td class="td"><tb-button></tb-button></td>
         </tr>
