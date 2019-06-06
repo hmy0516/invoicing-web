@@ -6,6 +6,7 @@
 </template>
 
 <script>
+  // import axios from 'axios'
   export default {
     name:'TbButton',
     props:["id"],
@@ -16,7 +17,20 @@
     },
     methods:{
       Delete:function(){
-        alert("确定删除该部门？")
+        if(confirm("确定删除该部门？")) {
+          // alert("删除该部门"+this.cid)
+          // axios.get('/api/department/${id}')
+          this.axios({
+            method:"delete",
+            url:'api/department/'+(this.cid),
+          })
+            .then((response)=> {
+              console.log(response);
+            })
+            .catch((error)=>{
+              console.log(error);
+            })
+        }
       }
     }
   }

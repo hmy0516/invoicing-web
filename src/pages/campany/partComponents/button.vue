@@ -1,7 +1,7 @@
 <template>
   <div class="btndiv">
     <button class="bbtn1" type="button" data-toggle="modal" data-target="#addModal"><i class="iconfont icontianjia1">添加</i></button>
-    <button class="bbtn2"><i class="iconfont iconshuaxin">刷新</i></button>
+    <button class="bbtn2" type="button" @click="Refresh"><i class="iconfont iconshuaxin">刷新</i></button>
 <!--    <button class="btn btn-default btn-sm">Button3</button>-->
     <Add id="addModal"></Add>
   </div>
@@ -13,6 +13,11 @@
     name:'Button',
     components:{
       Add:Add
+    },
+    methods:{
+      Refresh:function(){
+        this.$router.go(0)
+      }
     }
   }
 </script>
