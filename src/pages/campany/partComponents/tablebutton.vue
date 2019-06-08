@@ -1,15 +1,20 @@
 <template>
   <div class="btndiv">
-    <button class="bbtn1"><i class="iconfont  iconweibiaoti520">编辑</i></button>
+    <button class="bbtn1" data-toggle="modal" data-target="#editModal"><i class="iconfont  iconweibiaoti520">编辑</i></button>
     <button class="bbtn2" @click="Delete"><i class="iconfont  iconshanchu">删除</i></button>
+    <Edit id="editModal"></Edit>
   </div>
 </template>
 
 <script>
   // import axios from 'axios'
+  import Edit from './edit'
   export default {
     name:'TbButton',
     props:["id"],
+    components:{
+      Edit:Edit
+    },
     data:function(){
       return{
         cid:this.id
