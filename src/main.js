@@ -7,6 +7,10 @@ import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import './assets/iconfont/iconfont.css'
 import axios from 'axios'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';    // 默认主题
+// import '../static/css/theme-green/index.css';       // 浅绿色主题
+import '../static/css/icon.css';
 
 const myaxios = axios// 不跨域的axios
 // 如果要跨域的话, 对axios进行一些设置,当前使用的是跨域的
@@ -15,8 +19,10 @@ const axiosInstance = axios.create({
   withCredentials: true,// 指定某个请求应该发送凭据。允许客户端携带跨域cookie，也需要此配置
 });
 
+
+Vue.use(ElementUI);
 Vue.config.productionTip = false
-Vue.prototype.$axios = axios
+Vue.prototype.axios = axios
 let bus = new Vue()
 Vue.prototype.bus = bus
 

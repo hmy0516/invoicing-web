@@ -3,16 +3,23 @@ import Router from 'vue-router'
 import Home from '@/pages/home/Home'
 import MsgManage from '@/pages/campany/MsgManage'
 import PartManage from '@/pages/campany/PartManage'
-import test from '@/pages/test/test'
+import Login from '@/pages/Login'
+
 
 Vue.use(Router)
 
+
 export default new Router({
+  mode:'history',
   routes: [
     {
       path: '/',
-      name: 'test',
-      component: test
+      redirect:'/Login'
+    },
+    {
+      path: '/Login',
+      name: 'Login',
+      component: Login
     },
     {
       path: '/Home',

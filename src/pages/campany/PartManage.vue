@@ -37,7 +37,7 @@
       },
       getPartInfoSucc:function(res){
         res = res.data;
-        console.log("sss"+res.data.list)
+        //console.log("sss"+res.data.list)
         this.partList = res.data.list
       }
     }
