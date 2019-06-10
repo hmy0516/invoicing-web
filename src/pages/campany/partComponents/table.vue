@@ -30,6 +30,11 @@
 <!--        </tr>-->
       </tbody>
     </table>
+    <div class="page" >
+      <ul class="nav navbar-nav">
+        <li v-for="item of page"><a>{{item}}</a></li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -37,7 +42,7 @@
   import TbButton from "./tablebutton"
   export default {
     name:'Table',
-    props:["list"],
+    props:["list","page"],
     components:{
       TbButton:TbButton
     }
@@ -47,6 +52,7 @@
 <style scoped>
 .tablediv{
   color:#666666;
+  height:300px;
   }
 th{
   height:40px;
@@ -60,5 +66,10 @@ td{
 .td{
   width:190px;
   text-align: center;
+}
+.page{
+}
+li{
+  letter-spacing:4px;
 }
 </style>

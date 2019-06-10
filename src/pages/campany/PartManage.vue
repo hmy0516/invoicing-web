@@ -2,7 +2,7 @@
   <div class="home">
     <home-header :sid="sid"></home-header>
     <body-left :sid="sid"></body-left>
-    <body-right :list="partList"></body-right>
+    <body-right :list="partList" :page="pagesList"></body-right>
     <home-bottom></home-bottom>
   </div>
 </template>
@@ -24,7 +24,9 @@
     },
     data:function(){
       return{
-        partList:[]
+        partList:[],
+        pages:1,
+        pagesList:[]
       }
     },
     created(){
@@ -36,9 +38,15 @@
           .then(this.getPartInfoSucc)
       },
       getPartInfoSucc:function(res){
+        var num = 0;
         res = res.data;
-        console.log("sss"+res.data.list)
         this.partList = res.data.list
+        this.pages = res.data.pages
+        console.log(this.pages)
+        for(num;num<this.pages;num++){
+          this.pagesList.push(num+1)
+        }
+        console.log(this.pagesList)
       }
     }
     ,

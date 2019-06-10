@@ -51,29 +51,29 @@ import qs from 'qs'
       }
     },
     methods:{
-      // Create:function(){
-      //   this.axios({
-      //     method:"post",
-      //     url:'/api/department/',
-      //     data:qs.stringify({
-      //       cDid:this.cDid,
-      //       cDepartment: this.cDepartment,
-      //       cComment: this.cComment
-      //     },{ indices: false }),
-      //     headers:{
-      //       'Content-Type': 'application/json;charset=UTF-8'
-      //     }
-      //   })
-      //     .then((response)=> {
-      //       console.log(response);
-      //     })
-      //     .catch((error)=>{
-      //       console.log(error)
-      //     })
-      //   this.cDid=""
-      //   this.cDepartment=""
-      //   this.cComment=""
-      // }
+      Create:function(){
+        this.axios({
+          method:"post",
+          url:'/api/department',
+          data:qs.stringify({
+            cDid:this.cDid,
+            cDepartment: this.cDepartment,
+            cComment: this.cComment
+          },{ indices: false }),
+          headers:{
+            'Content-Type': 'application/json;charset=UTF-8'
+          }
+        })
+          .then((response)=> {
+            console.log(response);
+          })
+          .catch((error)=>{
+            console.log(error)
+          })
+        this.cDid=""
+        this.cDepartment=""
+        this.cComment=""
+      }
     }
   }
 </script>
