@@ -12,6 +12,8 @@
 
 <style>
   .bottom{
+    /*padding-bottom: 0px;*/
+    margin-left: 0px;
     padding: 15px;
     background-color: #EBEBEB;
     text-align: center;

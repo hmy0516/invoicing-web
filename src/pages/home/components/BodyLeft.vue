@@ -1,5 +1,5 @@
 <template>
-  <div class="bodyLeft">
+  <div class="bodyLeft col-md-2">
     <ul class="nav nav-stacked" v-once v-if="staticId == 1">
       <li v-for="item of sys" :key="item.id">
         <router-link :to="{path:item.href,query:{sid:staticId}}" class="a">{{item.text}}</router-link>
@@ -224,23 +224,20 @@ export default {
 <style  scoped>
   .bodyLeft{
     z-index: 9999;
-    position: relative;
-    font-size: 14px;
-    /*padding-left: 20px;*/
-    float:left;
-    width: 200px;
-    height:549px;
+    position: fixed;
+    height: 100%;
+    font-size: 0.9em;
     background-color: #393D49;
-    float: left;
+    padding: 0;
   }
   .bodyLeft > ul > li:hover ul {
     display: block;
   }
   .a{
-    padding-top: 17px;
+    padding-top: 1.22em;
     display: block;
     color:#A3A3A3;
-    height:50px;
+    height:3.6em;
   }
   .a:hover{
     background-color: #708090;
@@ -250,28 +247,24 @@ export default {
     text-decoration: none;
     background-color: #009688;
     color:#AADCD7;
-    padding-top: 17px;
+    /*padding-top: 17px;*/
     display: block;
-    height:50px;
   }
   .b:hover{
     background-color: #009688;
   }
   .goods{
     display: none;
-    width: 150px;
+    width: 80%;
     background-color: #708090;
     position: absolute;
-    left:200px;
-    top:0px;
-    /*border: #cccccc solid 1px;*/
+    left:100%;
+    top: 0;
   }
   .gli{
-    /*width: 20px;*/
-    /*border:#cccccc solid 1px;*/
-    padding-top: 10px;
+    padding-top: 8%;
     text-align: center;
-    height:40px;
+    height:3em;
     color:#d4d4d4;
   }
   .c{

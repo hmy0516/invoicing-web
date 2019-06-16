@@ -14,9 +14,12 @@ export default {
 
 <style scoped>
   .bodyRight{
-    height:503px;
+    /*height:100%;*/
+    position: relative;
+    /*left: 10%;*/
+    width: 100%;
     background: #F5F5F5;
-    font-size: 20px;
+    font-size: 1em;
     text-align: center;
   }
 </style>

@@ -3,7 +3,8 @@
     <home-header :sid="sid"></home-header>
     <body-left></body-left>
     <body-right></body-right>
-    <home-bottom></home-bottom>
+<!--    <home-bottom></home-bottom>-->
+
   </div>
 </template>
 
@@ -30,7 +31,4 @@ export default {
 </script>
 
 <style scoped>
-  .home{
-  }
-
 </style>
