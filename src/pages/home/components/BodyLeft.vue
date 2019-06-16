@@ -126,7 +126,7 @@ export default {
         },
         { id:32,
          text:'供应商管理',
-         href:'/Msg'
+         href:'/Supply'
         },
         { id:33,
           text:'客户商管理',

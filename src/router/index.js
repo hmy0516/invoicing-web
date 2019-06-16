@@ -7,6 +7,7 @@ import Commodity from '@/pages/resource/Commodity'
 import Customer from '@/pages/resource/Customer'
 import Price from '@/pages/resource/Price'
 import Cunit from '@/pages/resource/Cunit'
+import Supply from '@/pages/resource/Supply'
 import Log from '@/pages/system/Log'
 import Operator from '@/pages/system/Operator'
 import Role from '@/pages/system/Role'
@@ -179,6 +180,11 @@ export default new Router({
       path:'/Ledger',
       name:'Ledger',
       component: Ledger
+    },
+    {
+      path:'/Supply',
+      name:'Supply',
+      component: Supply
     }
   ]
 })
