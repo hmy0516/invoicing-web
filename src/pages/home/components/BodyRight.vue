@@ -15,11 +15,8 @@ export default {
 <style scoped>
   .bodyRight{
     height:100%;
-    position: relative;
-    /*left:20%;*/
-    /*left: 10%;*/
-    /*width: ;*/
-    background: #F5F5F5;
+    width: 100%;
+    /*background: #F5F5F5;*/
     font-size: 1em;
     text-align: center;
   }

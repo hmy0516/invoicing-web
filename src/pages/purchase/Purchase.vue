@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.purc{
+  height: 100%;
+}
 </style>

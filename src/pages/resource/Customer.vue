@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.customer{
+  height: 100%;
+}
 </style>

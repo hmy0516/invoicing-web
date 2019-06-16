@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.inv{
+  height: 100%;
+}
 </style>

@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.com{
+  height: 100%;
+}
 </style>

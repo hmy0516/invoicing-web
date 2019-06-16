@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.out-det{
+  height: 100%;
+}
 </style>

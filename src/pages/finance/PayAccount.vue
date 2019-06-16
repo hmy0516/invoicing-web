@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.payAcc{
+  height: 100%;
+}
 </style>

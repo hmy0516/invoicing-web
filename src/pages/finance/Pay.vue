@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.pay{
+  height: 100%;
+}
 </style>

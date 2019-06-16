@@ -12,8 +12,10 @@
 
 <style>
   .bottom{
-    /*padding-bottom: 0px;*/
-    margin-left: 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-left: 10%;
     padding: 15px;
     background-color: #EBEBEB;
     text-align: center;

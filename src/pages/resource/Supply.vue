@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.supply{
+  height: 100%;
+}
 </style>

@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.kinds{
+  height: 100%;
+}
 </style>

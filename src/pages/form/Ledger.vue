@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.ledger{
+  height: 100%;
+}
 </style>

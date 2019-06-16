@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.staff{
+  height: 100%;
+}
 </style>

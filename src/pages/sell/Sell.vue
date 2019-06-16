@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.sell{
+  height: 100%;
+}
 </style>

@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.set{
+  height: 100%;
+}
 </style>

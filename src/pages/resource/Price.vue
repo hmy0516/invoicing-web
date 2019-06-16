@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.price{
+  height: 100%;
+}
 </style>

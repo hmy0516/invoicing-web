@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.log{
+  height: 100%;
+}
 </style>

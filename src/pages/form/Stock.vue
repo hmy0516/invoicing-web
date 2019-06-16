@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.stock{
+  height: 100%;
+}
 </style>

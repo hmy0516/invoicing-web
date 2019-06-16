@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.job{
+  height: 100%;
+}
 </style>

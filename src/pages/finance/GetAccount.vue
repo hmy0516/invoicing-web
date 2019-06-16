@@ -31,5 +31,7 @@
 </script>
 
 <style scoped>
-
+.getAcc{
+  height: 100%;
+}
 </style>

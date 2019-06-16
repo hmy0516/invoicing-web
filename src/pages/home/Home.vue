@@ -3,8 +3,7 @@
     <home-header :sid="sid"></home-header>
     <body-left></body-left>
     <body-right></body-right>
-<!--    <home-bottom></home-bottom>-->
-
+    <home-bottom></home-bottom>
   </div>
 </template>
 
@@ -32,7 +31,6 @@ export default {
 
 <style>
   .home{
-    /*position: fixed;*/
     height:100%;
   }
 </style>

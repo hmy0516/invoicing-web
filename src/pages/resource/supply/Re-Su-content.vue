@@ -1,6 +1,5 @@
 <template>
   <div class="bodyRight">
-    supply
   </div>
 </template>
 
@@ -12,8 +11,13 @@
 
 <style scoped>
   .bodyRight{
-    height:503px;
+    height:100%;
+    width: 100%;
     background: #F5F5F5;
-    font-size: 14px;
+    font-size: 0.9em;
+  }
+  .table{
+    display: inline-block;
+    width: auto;
   }
 </style>
