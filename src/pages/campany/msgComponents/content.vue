@@ -1,43 +1,44 @@
 <template>
   <div class="bodyRight">
     <form class="form form-horizontal">
-      <fieldset>
+      <fieldset class="fieldset">
         <legend>企业管理-公司信息设置</legend>
         <div class="btndiv">
-          <button class="bbtn1"><i class="iconfont  iconweibiaoti520">编辑</i></button>
+          <button class="bbtn1" @click="Click"><i class="iconfont  iconweibiaoti520">编辑</i></button>
           <button class="bbtn2"><i class="iconfont iconshuaxin">刷新</i></button>
         </div>
+        <fieldset :disabled="disabled">
         <div class="table-div">
           <table>
             <tr>
               <div class="form-group">
-                <label class="head col-sm-2 control-label">企业名称：</label>
+                <label class="head col-md-2 control-label">企业名称：</label>
                 <div class="col-sm-10">
-                  <input class="form-control" type="text" value="仓库公司" disabled />
+                  <input class="form-control" type="text" value="仓库公司" />
                 </div>
               </div>
             </tr>
             <tr>
               <div class="form-group">
-                <label class="head col-sm-2 control-label">企业性质：</label>
+                <label class="head col-md-2 control-label">企业性质：</label>
                 <div class="col-sm-10">
-                  <select class="form-control" disabled >
-                    <option v-for="item of BusinessNature">{{item}}</option>
+                  <select class="form-control"  >
+                    <option v-for="(item,index) of BusinessNature" :nature="item" :key="index">{{item}}</option>
                   </select>
                 </div>
               </div>
             </tr>
             <tr>
               <div class="form-group">
-                <label class="head col-sm-2 control-label">经营范围：</label>
+                <label class="head col-md-2 control-label">经营范围：</label>
                 <div class="col-sm-10">
-                  <input class="form-control" type="text" value="仓库各方面管理" disabled />
+                  <input class="form-control" type="text" value="仓库各方面管理"  />
                 </div>
               </div>
             </tr>
             <tr>
               <div class="form-group">
-                <label class="head col-sm-2 control-label">成立时间：</label>
+                <label class="head col-md-2 control-label">成立时间：</label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" v-model="date" />
                 </div>
@@ -46,26 +47,21 @@
             </tr>
             <tr>
               <div class="form-group">
-                <label class="head col-sm-2 control-label">注册资金：</label>
-<!--                <div class="input-group col-md-6">-->
-<!--                  <span class="input-group-addon">$</span>-->
-<!--                  <input type="email" class="form-control" placeholder="金额">-->
-<!--                  <div class="input-group-addon">.00</div>-->
-<!--                </div>-->
-                <div class="input-group col-md-10">
+                <label class="head col-md-2 control-label">注册资金：</label>
+                <div class="input-group col-md-3">
                   <span class="input-group-addon">￥</span>
-                  <input type="text" class="form-control"  style="width: 617.34px;">
+                  <input type="text" class="form-control"  style="width: 147.34px;" value="100" >
                   <span class="input-group-addon">万元</span>
                 </div>
               </div>
             </tr>
             <tr>
               <div class="form-group">
-                <label class="head col-sm-2 control-label">员工人数：</label>
+                <label class="head col-md-2 control-label">员工人数：</label>
                 <div class="radio col-md-10">
 <!--                  <input class="form-control" type="text" value="6人" disabled />-->
                   <label>
-                    <input type="radio" name="cb" />1-20人
+                    <input type="radio" name="cb" checked />1-20人
                   </label>
                   <label>
                     <input type="radio" name="cb" />20-50人
@@ -81,18 +77,21 @@
             </tr>
             <tr>
               <div class="form-group">
-                <label class="head col-sm-2 control-label">占地面积：</label>
-                <div class="col-sm-10">
-                  <input class="form-control" type="text" value="60平方米" disabled />
+                <label class="head col-md-2 control-label">占地面积：</label>
+                <div class="input-group col-md-2">
+<!--                  <span class="input-group-addon">￥</span>-->
+                  <input type="text" class="form-control"  style="width: 117.34px;" value="60" >
+                  <span class="input-group-addon">平方米</span>
                 </div>
               </div>
             </tr>
             <tr v-if="show">
-              <button>确认</button>
-              <button>重置</button>
+              <button class="bbtn3">立即提交</button>
+              <button class="bbtn4">重置</button>
             </tr>
           </table>
         </div>
+        </fieldset>
       </fieldset>
     </form>
   </div>
@@ -105,6 +104,8 @@
     data:function(){
       return{
         show:false,
+        nature:"",
+        disabled:true,
         BusinessNature:["国有企业","集体企业","联营企业","股份合作制企业","私有企业",
           "个体户","合伙企业","有限责任工资","股份企业有限"],
         date:new Date(),
@@ -116,6 +117,13 @@
             selectTime: ''
           }
         }
+      }
+    },
+    methods:{
+      Click:function(){
+        // alert("aaa")
+        this.show=true
+        this.disabled=false
       }
     }
   }
@@ -133,7 +141,7 @@
     top:10px;
     width:1250px;
   }
-  fieldset {
+  .fieldset {
     position: inherit;
     margin-left:230px;
     padding-left: 20px;
@@ -170,9 +178,32 @@
     height: 22px;
     width: 60px;
   }
-  .bbtn2:hover{
+  .bbtn2:hover,.bbtn3:hover{
     background-color: #2FA89D;
     border: #2FA89D solid 1px;
+  }
+  .bbtn3{
+    background-color: #009688;
+    border: #009688 solid 1px;
+    border-radius:2px;
+    height: 35px;
+    width: 78px;
+    font-size: 14px;
+    color: #ffffff;
+    font-family: "微软雅黑";
+    margin-left: 35px;
+    margin-top: 10px;
+  }
+  .bbtn4{
+    /*background-color: #009688;*/
+    border: #d4d4d4 solid 1px;
+    border-radius:2px;
+    height: 35px;
+    width: 78px;
+    font-size: 14px;
+    color: #5e5e5e;
+    font-family: "微软雅黑";
+    margin-left: 20px;
   }
   i{
     font-size: 14px;

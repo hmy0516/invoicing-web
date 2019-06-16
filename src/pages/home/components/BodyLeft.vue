@@ -10,6 +10,36 @@
         <router-link :to="{path:item.href,query:{sid:staticId}}" class="a">{{item.text}}</router-link>
       </li>
     </ul>
+    <ul class="nav nav-stacked" v-once v-else-if="staticId == 3">
+      <li v-for="item of res" :key="item.id">
+        <router-link :to="{path:item.href,query:{sid:staticId}}" class="a">{{item.text}}</router-link>
+      </li>
+    </ul>
+    <ul class="nav nav-stacked" v-once v-else-if="staticId == 4">
+      <li v-for="item of buy" :key="item.id">
+        <router-link :to="{path:item.href,query:{sid:staticId}}" class="a">{{item.text}}</router-link>
+      </li>
+    </ul>
+    <ul class="nav nav-stacked" v-once v-else-if="staticId == 5">
+      <li v-for="item of ware" :key="item.id">
+        <router-link :to="{path:item.href,query:{sid:staticId}}" class="a">{{item.text}}</router-link>
+      </li>
+    </ul>
+    <ul class="nav nav-stacked" v-once v-else-if="staticId == 6">
+      <li v-for="item of sell" :key="item.id">
+        <router-link :to="{path:item.href,query:{sid:staticId}}" class="a">{{item.text}}</router-link>
+      </li>
+    </ul>
+    <ul class="nav nav-stacked" v-once v-else-if="staticId == 7">
+      <li v-for="item of finan" :key="item.id">
+        <router-link :to="{path:item.href,query:{sid:staticId}}" class="a">{{item.text}}</router-link>
+      </li>
+    </ul>
+    <ul class="nav nav-stacked" v-once v-else-if="staticId == 8">
+      <li v-for="item of form" :key="item.id">
+        <router-link :to="{path:item.href,query:{sid:staticId}}" class="a">{{item.text}}</router-link>
+      </li>
+    </ul>
     <ul class="nav nav-stacked" v-once v-else>
       <li v-for="item of index" :key="item.id">
         <router-link :to="{path:item.href,query:{sid:staticId}}" class="a">{{item.text}}</router-link>
@@ -61,12 +91,89 @@ export default {
         { id: 24,
           text: '员工管理',
           href: '/Msg'
-        }]
-      // res: ['商品库管理', '供应商管理', '客户商管理'],
-      // buy: ['采购单管理'],
-      // ware: ['仓库设置', '入库管理', '出库管理'],
-      // sell: ['销售单'],
-      // finan: ['采购应付款报表', '采购应付结算单', '采购应收款报表', '销售应收结算单'],
+        }],
+      res: [
+        { id:31,
+        text:'商品库管理',
+        href:'/Commodity'
+        },
+        { id:32,
+         text:'供应商管理',
+         href:'/Msg'
+        },
+        { id:33,
+          text:'客户商管理',
+          href:'/Msg'
+        }],
+      buy: [
+        {id:41,
+        text:'采购单管理',
+        href:'/Msg'
+        }],
+      ware: [
+        { id:51,
+          text:'仓库设置',
+          href:'/Msg'
+        },
+        { id:52,
+          text:'入库管理',
+          href:'/Msg'
+        },
+        { id:53,
+          text:'出库管理',
+          href:'/Msg'
+        }],
+      sell: [
+        {id:61,
+          text:'销售单',
+          href:'/Msg'
+        }],
+      finan: [
+        { id: 71,
+          text: '采购应付款报表',
+          href: '/Msg'
+        },
+        { id: 72,
+          text: '采购应付结算单',
+          href: '/Part'
+        },
+        { id: 73,
+          text: '采购应收款报表',
+          href: '/Msg'
+        },
+        { id: 74,
+          text: '销售应收结算单',
+          href: '/Msg'
+        }],
+      form:[
+        { id: 81,
+          text: '库存报表',
+          href: '/Msg'
+        },
+        { id: 82,
+          text: '库存报表',
+          href: '/Part'
+        },
+        { id: 83,
+          text: '商品台账报表',
+          href: '/Msg'
+        },
+        { id: 84,
+          text: '入库汇总报表',
+          href: '/Msg'
+        },
+        { id: 85,
+          text: '入库明细报表',
+          href: '/Msg'
+        },
+        { id: 86,
+          text: '出库汇总报表',
+          href: '/Msg'
+        },
+        { id: 87,
+          text: '出库明细报表',
+          href: '/Msg'
+        }],
       // form: ['库存报表', '进销存报表', '商品台账报表'],
       // show: true,
     }
