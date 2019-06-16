@@ -1,6 +1,6 @@
 <template>
   <div class="bodyRight">
-    role
+    kinds
   </div>
 </template>
 

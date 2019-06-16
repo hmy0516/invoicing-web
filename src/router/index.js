@@ -8,6 +8,7 @@ import Customer from '@/pages/resource/Customer'
 import Price from '@/pages/resource/Price'
 import Cunit from '@/pages/resource/Cunit'
 import Supply from '@/pages/resource/Supply'
+import Kinds from '@/pages/resource/Kinds'
 import Log from '@/pages/system/Log'
 import Operator from '@/pages/system/Operator'
 import Role from '@/pages/system/Role'
@@ -185,6 +186,11 @@ export default new Router({
       path:'/Supply',
       name:'Supply',
       component: Supply
+    },
+    {
+      path:'/Kinds',
+      name:'Kinds',
+      component: Kinds
     }
   ]
 })

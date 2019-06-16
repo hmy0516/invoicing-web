@@ -82,6 +82,11 @@ export default {
         text:'单位',
         href:'/Cunit',
         parent:31
+      }, {
+        id:2,
+        text:'商品种类',
+        href:'/Kinds',
+        parent:31
       }],
       index: [{
         id: 0,
