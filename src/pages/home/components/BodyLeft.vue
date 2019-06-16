@@ -224,7 +224,6 @@ export default {
 <style  scoped>
   .bodyLeft{
     z-index: 9999;
-    position: fixed;
     height: 100%;
     font-size: 0.9em;
     background-color: #393D49;

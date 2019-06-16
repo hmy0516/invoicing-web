@@ -30,5 +30,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+  .home{
+    /*position: fixed;*/
+    height:100%;
+  }
 </style>

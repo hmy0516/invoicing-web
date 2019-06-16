@@ -16,4 +16,7 @@
     min-width: 600px;      /*最小宽度*/
     max-width: 2880px;
   }
+  html,body,#app{
+    height: 100%;
+  }
 </style>
