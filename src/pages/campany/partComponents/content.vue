@@ -35,28 +35,29 @@
 
 <style scoped>
   .bodyRight{
-    height:503px;
+    height:100%;
+    width: 100%;
     background: #F5F5F5;
-    font-size: 14px;
+    font-size: 0.9em;
+    font-family: Arial;
+    padding-top: 1%;
   }
   .form{
-    position: relative;
-    top:10px;
-    width:1250px;
+    width:80%;
+    height: 92%;
+    margin-left: 18.4%;
   }
   fieldset {
     position: inherit;
-    margin-left:230px;
-    padding-left: 20px;
-    padding-right: 20px;
-    height:470px;
+    padding-left:2%;
+    height:96%;
     border: 1px solid #E6E6E6;
   }
   legend {
     padding: .5em;
     border: 0;
     width: auto;
-    font-size: 19px;
+    font-size: 1.35em;
     font-family: "微软雅黑 light";
   }
   .form-group{
@@ -77,6 +78,6 @@
     color:#ffffff;
   }
   i{
-    font-size: 14px;
+    font-size: 0.9em;
   }
 </style>

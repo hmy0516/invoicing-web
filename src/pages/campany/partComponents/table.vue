@@ -52,7 +52,7 @@
 <style scoped>
 .tablediv{
   color:#666666;
-  height:300px;
+  height:70%;
   }
 th{
   height:40px;

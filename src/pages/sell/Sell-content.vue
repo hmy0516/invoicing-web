@@ -1,9 +1,7 @@
 <template>
   <div class="bodyRight">
-    <div>
       <div><el-button type="primary" @click="submitForm('ruleForm')">提交</el-button></div>
       <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-        <el-form-item>
           <el-col :span="5">
             <el-form-item label="单据日期:" prop="creatDate">
               <el-date-picker type="date" :picker-options="pickerOptions0" placeholder="选择日期" v-model="ruleForm.creatDate" style="width: 100%;"></el-date-picker>
@@ -30,15 +28,20 @@
               </el-select>
             </el-form-item>
           </el-col>
-        </el-form-item>
+          <hr>
+          <hr>
+
       </el-form>
-    </div>
+      <RelateTable></RelateTable>
+
   </div>
 </template>
 
 <script>
+  import RelateTable from "./RelateTable";
   export default {
     name:'Content',
+    components: {RelateTable},
     data() {
       return {
         //限制今天之前的不能选择
@@ -47,6 +50,22 @@
             return time.getTime() < Date.now() - 8.64e7;
           }
         },
+        details: [],
+        formTypeOptions: [
+          {
+            value: 0,
+            label: '主表'
+          },
+          {
+            value: 1,
+            label: '子表'
+          }
+        ],
+        multipleSelection: [],
+        formids: [],
+        deleteIds: [],
+        currentIndex: null,
+        flowName: null,
         ruleForm: {
           creatDate: '',
           saleNumber:'',
@@ -102,8 +121,9 @@
 <style scoped>
   .bodyRight{
     height:100%;
-    width: 100%;
+    width: 83.3%;
     background: #F5F5F5;
     font-size: 0.9em;
+    float: left;
   }
 </style>

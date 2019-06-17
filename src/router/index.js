@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home/Home'
+import Login from '@/pages/Login'
 import MsgManage from '@/pages/campany/MsgManage'
 import PartManage from '@/pages/campany/PartManage'
-import Login from '@/pages/Login'
-
 import Commodity from '@/pages/resource/Commodity'
 import Customer from '@/pages/resource/Customer'
 import Price from '@/pages/resource/Price'
@@ -32,6 +31,8 @@ import Outdetail from '@/pages/form/Outdetail'
 import Invoicing from '@/pages/form/Invoicing'
 import Stock from '@/pages/form/Stock'
 import Ledger from '@/pages/form/Ledger'
+import RelateTable from '@/pages/sell/RelateTable'
+import NewSell from '@/pages/sell/NewSell'
 
 Vue.use(Router)
 
@@ -196,6 +197,16 @@ export default new Router({
       path:'/Kinds',
       name:'Kinds',
       component: Kinds
+    },
+    {
+      path:'/RelateTable',
+      name:'RelateTable',
+      component: RelateTable
+    },
+    {
+      path:'/NewSell',
+      name:'NewSell',
+      component: NewSell
     }
   ]
 })
