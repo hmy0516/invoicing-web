@@ -1,6 +1,6 @@
 <template>
-  <div class="row header">
-    <div class="col-md-2 h-logo">进销存管理系统</div>
+  <div class="header">
+    <span class="col-md-2 h-logo">进销存管理系统</span>
     <div class="h-nav">
         <ul class="nav navbar-nav">
           <li v-for="items of list"  :key="items.id" @click="Click(items.id)">
@@ -74,18 +74,18 @@ export default{
 
 <style scoped>
   .header {
-    width: 101.15%;
+    width: 100%;
+    height:60px;
     padding-top: 10px;
-    font-size: 14px;
+    font-size: 0.9em;
     font-family: "微软雅黑 light", sans-serif;
-    height: 60px;
     background-color: #292929;
     text-align: center;
   }
   .h-logo{
     padding-top: 11px;
     color: #458B74;
-    font-size: 16px;
+    font-size: 1em;
     font-family: "微软雅黑";
   }
   .h-nav{

@@ -29,9 +29,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .home{
-    height: 100%;
+    height:100%;
   }
 
 </style>

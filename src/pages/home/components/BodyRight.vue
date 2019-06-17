@@ -174,11 +174,14 @@ export default {
     }
   }
 }
-
 </script>
 
-
 <style scoped>
+  .bodyRight{
+    height:100%;
+    width: 100%;
+    /*background: #F5F5F5;*/
+    font-size: 1em;}
   .el-row {
     margin-bottom: 20px;
   }

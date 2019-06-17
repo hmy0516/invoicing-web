@@ -32,4 +32,8 @@
 </script>
 
 <style scoped>
+  .home
+  {
+    height: 100%;
+  }
 </style>

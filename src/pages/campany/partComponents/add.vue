@@ -54,12 +54,12 @@ import qs from 'qs'
       Create:function(){
         this.axios({
           method:"post",
-          url:'/api/department',
-          data:qs.stringify({
+          url:'/api/department/',
+          data:{
             cDid:this.cDid,
             cDepartment: this.cDepartment,
             cComment: this.cComment
-          },{ indices: false }),
+          },
           headers:{
             'Content-Type': 'application/json;charset=UTF-8'
           }
