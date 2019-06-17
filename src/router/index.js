@@ -37,13 +37,13 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'test',
-    //   component: test
-    // },
     {
       path: '/',
+      name: 'test',
+      component: test
+    },
+    {
+      path: '/Home',
       name: 'Home',
       component: Home
     },

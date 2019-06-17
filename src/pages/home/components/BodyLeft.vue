@@ -91,7 +91,7 @@ export default {
       index: [{
         id: 0,
         text: '首页',
-        href: '/'
+        href: '/Home'
       }],
       sys: [
         {

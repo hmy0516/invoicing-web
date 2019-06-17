@@ -12,6 +12,7 @@
 
 <style>
   .bottom{
+    z-index: 9998;
     position: fixed;
     bottom: 0;
     width: 100%;
