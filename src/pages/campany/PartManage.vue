@@ -2,7 +2,7 @@
   <div class="home">
     <home-header :sid="sid"></home-header>
     <body-left :sid="sid"></body-left>
-    <body-right :list="partList"></body-right>
+    <body-right :list="partList" :page="pagesList"></body-right>
     <home-bottom></home-bottom>
   </div>
 </template>
@@ -37,7 +37,7 @@
       },
       getPartInfoSucc:function(res){
         res = res.data;
-        //console.log("sss"+res.data.list)
+        console.log("sss"+res.data.list)
         this.partList = res.data.list
       }
     }

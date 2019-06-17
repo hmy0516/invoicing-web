@@ -13,7 +13,7 @@
           </div>
         </div>
         <Button></Button>
-        <Table :list="list"></Table>
+        <Table :list="list" :page="page"></Table>
       </fieldset>
     </form>
   </div>
@@ -25,7 +25,7 @@
 
   export default {
     name: 'Content',
-    props:["list"],
+    props:["list","page"],
     components:{
       Button:Button,
       Table:Table

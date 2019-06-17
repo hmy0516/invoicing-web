@@ -4,6 +4,7 @@ import Home from '@/pages/home/Home'
 import MsgManage from '@/pages/campany/MsgManage'
 import PartManage from '@/pages/campany/PartManage'
 import Login from '@/pages/Login'
+import SaleOrder from '@/pages/sale/SaleOrder'
 
 
 Vue.use(Router)
@@ -35,6 +36,11 @@ export default new Router({
       path:'/Part',
       name:'PartManage',
       component: PartManage
+    },
+    {
+      path:'/SaleOrder',
+      name:'SaleOrder',
+      component: SaleOrder
     }
   ]
 })

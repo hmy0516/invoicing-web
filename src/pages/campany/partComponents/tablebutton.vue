@@ -1,16 +1,41 @@
 <template>
   <div class="btndiv">
-    <button class="bbtn1"><i class="iconfont  iconweibiaoti520">编辑</i></button>
+    <button class="bbtn1" data-toggle="modal" data-target="#editModal"><i class="iconfont  iconweibiaoti520">编辑</i></button>
     <button class="bbtn2" @click="Delete"><i class="iconfont  iconshanchu">删除</i></button>
+    <Edit id="editModal"></Edit>
   </div>
 </template>
 
 <script>
+  // import axios from 'axios'
+  import Edit from './edit'
   export default {
     name:'TbButton',
+    props:["id"],
+    components:{
+      Edit:Edit
+    },
+    data:function(){
+      return{
+        cid:this.id
+      }
+    },
     methods:{
       Delete:function(){
-        alert("确定删除该部门？")
+        if(confirm("确定删除该部门？")) {
+          // alert("删除该部门"+this.cid)
+          // axios.get('/api/department/${id}')
+          this.axios({
+            method:"delete",
+            url:'api/department/'+(this.cid),
+          })
+            .then((response)=> {
+              console.log(response);
+            })
+            .catch((error)=>{
+              console.log(error);
+            })
+        }
       }
     }
   }
