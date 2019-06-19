@@ -54,7 +54,7 @@
               } else {
                 callback()
               }
-            }
+            };
             return {
                 loading:false,
                 ruleForm: {
@@ -77,12 +77,14 @@
                     verifyCode: [
                         { required: true, trigger: 'blur', validator: validateVerifycode }
                     ]
-                }
+                },
+              message:'',
+              cUid:''
             }
         },
         mounted() {
           // 验证码初始化
-          this.identifyCode = ''
+          this.identifyCode = '';
           this.makeCode(this.identifyCodes, 4)
         },
         methods: {
@@ -91,11 +93,16 @@
                 if(v){
                   this.axios.post("/api/login",this.ruleForm).then(res=>{
                     if(res.data.status==200){
+                      //sessionStorage.setItem('cUid',res.data.data.cUid);
+                      this.cUid=res.data.data.cUid;
                       this.$message({
                         message:res.data.msg,
                         type:'success'
                       });
-                      this.$router.push("/Home")
+                      this.$router.push({
+                        name: 'Home'
+                      });
+                      this.initWebSocket()
                     }else{
                       this.refreshCode();
                       this.$message.error(res.data.msg)
@@ -113,7 +120,7 @@
           },
           // 切换验证码
           refreshCode() {
-            this.identifyCode = ''
+            this.identifyCode = '';
             this.makeCode(this.identifyCodes, 4)
           },
           // 生成四位随机验证码
@@ -124,6 +131,36 @@
                 ]
             }
             console.log(this.identifyCode)
+          },
+          initWebSocket: function () {
+            // WebSocket与普通的请求所用协议有所不同，ws等同于http，wss等同于https
+            console.log()
+            var url="ws://localhost:8080/websocket/"+this.cUid;
+            console.log(url)
+            this.websock = new WebSocket(url);
+
+            this.websock.onopen = this.websocketonopen;
+            this.websock.onerror = this.websocketonerror;
+            this.websock.onmessage = this.websocketonmessage;
+            this.websock.onclose = this.websocketclose;
+          },
+          websocketonopen: function () {
+            console.log("WebSocket连接成功",sessionStorage.getItem('cUid'));
+            //sessionStorage.getItem('cUid')
+            //this.axios.get()
+          },
+          websocketonerror: function (e) {
+            console.log("WebSocket连接发生错误");
+          },
+          websocketonmessage: function (e) {
+            //var da = JSON.parse(e.data);
+            console.log(e.data,"session",sessionStorage.getItem('cUid'));
+            this.cUid=sessionStorage.getItem('cUid');
+            this.$parent.dialogVisible=true;
+            this.message = e.data;
+          },
+          websocketclose: function (e) {
+            console.log("connection closed (" + e.code + ")");
           }
         }
     }

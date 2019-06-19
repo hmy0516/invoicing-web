@@ -32,7 +32,7 @@ import Invoicing from '@/pages/form/Invoicing'
 import Stock from '@/pages/form/Stock'
 import Ledger from '@/pages/form/Ledger'
 import RelateTable from '@/pages/sell/RelateTable'
-import NewSell from '@/pages/sell/NewSell'
+import SellDetail from '@/pages/sell/SellDetail'
 
 Vue.use(Router)
 
@@ -204,9 +204,9 @@ export default new Router({
       component: RelateTable
     },
     {
-      path:'/NewSell',
-      name:'NewSell',
-      component: NewSell
+      path:'/SellDetail',
+      name:'SellDetail',
+      component: SellDetail
     }
   ]
 })

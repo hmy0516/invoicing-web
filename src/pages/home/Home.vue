@@ -17,7 +17,8 @@ export default {
   name: 'Home',
   data:function(){
     return{
-      sid:0
+      sid:0,
+      uid:this.$route.params.id
     }
   },
   components: {
@@ -25,6 +26,9 @@ export default {
     BodyLeft: BodyLeft,
     BodyRight: BodyRight,
     HomeBottom: HomeBottom
+  },
+  created() {
+    console.log(this.uid)
   }
 }
 </script>

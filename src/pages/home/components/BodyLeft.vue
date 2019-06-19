@@ -159,6 +159,10 @@ export default {
         {id:61,
           text:'销售单',
           href:'/Sell'
+        },
+        {id:62,
+          text:'销售单详情',
+          href:'/SellDetail'
         }],
       finan: [
         { id: 71,
